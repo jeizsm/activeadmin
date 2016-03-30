@@ -87,7 +87,7 @@ module ActiveAdmin
     #   end
     #
     def csv(options={}, &block)
-      options[:resource] = @resource
+      options[:resource] ||= @resource
 
       config.csv_builder = CSVBuilder.new(options, &block)
     end
